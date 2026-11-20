@@ -1,0 +1,360 @@
+2026-10-14 23:28:45,848 [INFO] database: БД инициализирована
+2026-10-14 23:29:00,884 [ERROR] bot: Не удалось установить список команд
+Traceback (most recent call last):
+  File "C:\Users\SystemX\Downloads\Telegram Desktop\music_bot\music_bot\venv\Lib\site-packages\urllib3\connection.py", line 239, in _new_conn
+    sock = connection.create_connection(
+        (self._dns_host, self.port),
+    ...<2 lines>...
+        socket_options=self.socket_options,
+    )
+  File "C:\Users\SystemX\Downloads\Telegram Desktop\music_bot\music_bot\venv\Lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
+    raise err
+  File "C:\Users\SystemX\Downloads\Telegram Desktop\music_bot\music_bot\venv\Lib\site-packages\urllib3\util\connection.py", line 73, in create_connection
+    sock.connect(sa)
+    ~~~~~~~~~~~~^^^^
+TimeoutError: timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\SystemX\Downloads\Telegram Desktop\music_bot\music_bot\venv\Lib\site-packages\urllib3\connectionpool.py", line 793, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "C:\Users\SystemX\Downloads\Telegram Desktop\music_bot\music_bot\venv\Lib\site-packages\urllib3\connectionpool.py", line 494, in _make_request
+    raise new_e
+  File "C:\Users\SystemX\Downloads\Telegram Desktop\music_bot\music_bot\venv\Lib\site-packages\urllib3\connectionpool.py", line 470, in _make_request
+    self._validate_conn(conn)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\SystemX\Downloads\Telegram Desktop\music_bot\music_bot\venv\Lib\site-packages\urllib3\connectionpool.py", line 1125, in _validate_conn
+    conn.connect()
+    ~~~~~~~~~~~~^^
+  File "C:\Users\SystemX\Downloads\Telegram Desktop\music_bot\music_bot\venv\Lib\site-packages\urllib3\connection.py", line 827, in connect
+    self.sock = sock = self._new_conn()
+                       ~~~~~~~~~~~~~~^^
+  File "C:\Users\SystemX\Downloads\Telegram Desktop\music_bot\music_bot\venv\Lib\site-packages\urllib3\connection.py", line 248, in _new_conn
+    raise ConnectTimeoutError(
+    ...<2 lines>...
+    ) from e
+urllib3.exceptions.ConnectTimeoutError: (<HTTPSConnection(host='api.telegram.org', port=443) at 0x28239b66e40>, 'Connection to api.telegram.org timed out. (connect timeout=15)')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\SystemX\Downloads\Telegram Desktop\music_bot\music_bot\venv\Lib\site-packages\requests\adapters.py", line 696, in send
+    resp = conn.urlopen(
+        method=request.method,
+    ...<9 lines>...
+        chunked=chunked,
+    )
+  File "C:\Users\SystemX\Downloads\Telegram Desktop\music_bot\music_bot\venv\Lib\site-packages\urllib3\connectionpool.py", line 847, in urlopen
+    retries = retries.increment(
+        method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+    )
+  File "C:\Users\SystemX\Downloads\Telegram Desktop\music_bot\music_bot\venv\Lib\site-packages\urllib3\util\retry.py", line 555, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot8968615846:AAHfTNrU3RB2xeV5tJT6lREsVZo6dgRbOAE/setMyCommands?commands=%5B%7B%22command%22%3A+%22start%22%2C+%22description%22%3A+%22%5Cu041d%5Cu0430%5Cu0447%5Cu0430%5Cu0442%5Cu044c%22%7D%2C%7B%22command%22%3A+%22profile%22%2C+%22description%22%3A+%22%5Cu041c%5Cu043e%5Cu0439+%5Cu043f%5Cu0440%5Cu043e%5Cu0444%5Cu0438%5Cu043b%5Cu044c%22%7D%2C%7B%22command%22%3A+%22my_stats%22%2C+%22description%22%3A+%22%5Cu041c%5Cu043e%5Cu044f+%5Cu0441%5Cu0442%5Cu0430%5Cu0442%5Cu0438%5Cu0441%5Cu0442%5Cu0438%5Cu043a%5Cu0430%22%7D%2C%7B%22command%22%3A+%22my_tracks%22%2C+%22description%22%3A+%22%5Cu041c%5Cu043e%5Cu0438+%5Cu0442%5Cu0440%5Cu0435%5Cu043a%5Cu0438%22%7D%2C%7B%22command%22%3A+%22achievements%22%2C+%22description%22%3A+%22%5Cu0410%5Cu0447%5Cu0438%5Cu0432%5Cu043a%5Cu0438%22%7D%2C%7B%22command%22%3A+%22referral%22%2C+%22description%22%3A+%22%5Cu0420%5Cu0435%5Cu0444%5Cu0435%5Cu0440%5Cu0430%5Cu043b%5Cu044c%5Cu043d%5Cu0430%5Cu044f+%5Cu0441%5Cu0441%5Cu044b%5Cu043b%5Cu043a%5Cu0430%22%7D%2C%7B%22command%22%3A+%22top%22%2C+%22description%22%3A+%22%5Cu0422%5Cu043e%5Cu043f+%5Cu0442%5Cu0440%5Cu0435%5Cu043a%5Cu043e%5Cu0432%22%7D%5D (Caused by ConnectTimeoutError(<HTTPSConnection(host='api.telegram.org', port=443) at 0x28239b66e40>, 'Connection to api.telegram.org timed out. (connect timeout=15)'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\SystemX\Downloads\Telegram Desktop\music_bot\music_bot\bot.py", line 1072, in main
+    bot.set_my_commands([
+    ~~~~~~~~~~~~~~~~~~~^^
+        types.BotCommand("start", "Начать"),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+        types.BotCommand("top", "Топ треков"),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ])
+    ^^
+  File "C:\Users\SystemX\Downloads\Telegram Desktop\music_bot\music_bot\venv\Lib\site-packages\telebot\__init__.py", line 3664, in set_my_commands
+    return apihelper.set_my_commands(self.token, commands, scope, language_code)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SystemX\Downloads\Telegram Desktop\music_bot\music_bot\venv\Lib\site-packages\telebot\apihelper.py", line 1264, in set_my_commands
+    return _make_request(token, method_url, params=payload, method='post')
+  File "C:\Users\SystemX\Downloads\Telegram Desktop\music_bot\music_bot\venv\Lib\site-packages\telebot\apihelper.py", line 156, in _make_request
+    result = _get_req_session().request(
+        method, request_url, params=params, files=files,
+        timeout=(connect_timeout, read_timeout), proxies=proxy)
+  File "C:\Users\SystemX\Downloads\Telegram Desktop\music_bot\music_bot\venv\Lib\site-packages\requests\sessions.py", line 651, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\SystemX\Downloads\Telegram Desktop\music_bot\music_bot\venv\Lib\site-packages\requests\sessions.py", line 784, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\SystemX\Downloads\Telegram Desktop\music_bot\music_bot\venv\Lib\site-packages\requests\adapters.py", line 717, in send
+    raise ConnectTimeout(e, request=request)
+requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot8968615846:AAHfTNrU3RB2xeV5tJT6lREsVZo6dgRbOAE/setMyCommands?commands=%5B%7B%22command%22%3A+%22start%22%2C+%22description%22%3A+%22%5Cu041d%5Cu0430%5Cu0447%5Cu0430%5Cu0442%5Cu044c%22%7D%2C%7B%22command%22%3A+%22profile%22%2C+%22description%22%3A+%22%5Cu041c%5Cu043e%5Cu0439+%5Cu043f%5Cu0440%5Cu043e%5Cu0444%5Cu0438%5Cu043b%5Cu044c%22%7D%2C%7B%22command%22%3A+%22my_stats%22%2C+%22description%22%3A+%22%5Cu041c%5Cu043e%5Cu044f+%5Cu0441%5Cu0442%5Cu0430%5Cu0442%5Cu0438%5Cu0441%5Cu0442%5Cu0438%5Cu043a%5Cu0430%22%7D%2C%7B%22command%22%3A+%22my_tracks%22%2C+%22description%22%3A+%22%5Cu041c%5Cu043e%5Cu0438+%5Cu0442%5Cu0440%5Cu0435%5Cu043a%5Cu0438%22%7D%2C%7B%22command%22%3A+%22achievements%22%2C+%22description%22%3A+%22%5Cu0410%5Cu0447%5Cu0438%5Cu0432%5Cu043a%5Cu0438%22%7D%2C%7B%22command%22%3A+%22referral%22%2C+%22description%22%3A+%22%5Cu0420%5Cu0435%5Cu0444%5Cu0435%5Cu0440%5Cu0430%5Cu043b%5Cu044c%5Cu043d%5Cu0430%5Cu044f+%5Cu0441%5Cu0441%5Cu044b%5Cu043b%5Cu043a%5Cu0430%22%7D%2C%7B%22command%22%3A+%22top%22%2C+%22description%22%3A+%22%5Cu0422%5Cu043e%5Cu043f+%5Cu0442%5Cu0440%5Cu0435%5Cu043a%5Cu043e%5Cu0432%22%7D%5D (Caused by ConnectTimeoutError(<HTTPSConnection(host='api.telegram.org', port=443) at 0x28239b66e40>, 'Connection to api.telegram.org timed out. (connect timeout=15)'))
+2026-10-14 23:33:46,131 [INFO] database: БД инициализирована
+2026-10-14 23:34:01,158 [ERROR] bot: Не удалось установить список команд
+Traceback (most recent call last):
+  File "C:\Users\SystemX\Downloads\Telegram Desktop\music_bot\music_bot\venv\Lib\site-packages\urllib3\connection.py", line 239, in _new_conn
+    sock = connection.create_connection(
+        (self._dns_host, self.port),
+    ...<2 lines>...
+        socket_options=self.socket_options,
+    )
+  File "C:\Users\SystemX\Downloads\Telegram Desktop\music_bot\music_bot\venv\Lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
+    raise err
+  File "C:\Users\SystemX\Downloads\Telegram Desktop\music_bot\music_bot\venv\Lib\site-packages\urllib3\util\connection.py", line 73, in create_connection
+    sock.connect(sa)
+    ~~~~~~~~~~~~^^^^
+TimeoutError: timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\SystemX\Downloads\Telegram Desktop\music_bot\music_bot\venv\Lib\site-packages\urllib3\connectionpool.py", line 793, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "C:\Users\SystemX\Downloads\Telegram Desktop\music_bot\music_bot\venv\Lib\site-packages\urllib3\connectionpool.py", line 494, in _make_request
+    raise new_e
+  File "C:\Users\SystemX\Downloads\Telegram Desktop\music_bot\music_bot\venv\Lib\site-packages\urllib3\connectionpool.py", line 470, in _make_request
+    self._validate_conn(conn)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\SystemX\Downloads\Telegram Desktop\music_bot\music_bot\venv\Lib\site-packages\urllib3\connectionpool.py", line 1125, in _validate_conn
+    conn.connect()
+    ~~~~~~~~~~~~^^
+  File "C:\Users\SystemX\Downloads\Telegram Desktop\music_bot\music_bot\venv\Lib\site-packages\urllib3\connection.py", line 827, in connect
+    self.sock = sock = self._new_conn()
+                       ~~~~~~~~~~~~~~^^
+  File "C:\Users\SystemX\Downloads\Telegram Desktop\music_bot\music_bot\venv\Lib\site-packages\urllib3\connection.py", line 248, in _new_conn
+    raise ConnectTimeoutError(
+    ...<2 lines>...
+    ) from e
+urllib3.exceptions.ConnectTimeoutError: (<HTTPSConnection(host='api.telegram.org', port=443) at 0x282c611eba0>, 'Connection to api.telegram.org timed out. (connect timeout=15)')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\SystemX\Downloads\Telegram Desktop\music_bot\music_bot\venv\Lib\site-packages\requests\adapters.py", line 696, in send
+    resp = conn.urlopen(
+        method=request.method,
+    ...<9 lines>...
+        chunked=chunked,
+    )
+  File "C:\Users\SystemX\Downloads\Telegram Desktop\music_bot\music_bot\venv\Lib\site-packages\urllib3\connectionpool.py", line 847, in urlopen
+    retries = retries.increment(
+        method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+    )
+  File "C:\Users\SystemX\Downloads\Telegram Desktop\music_bot\music_bot\venv\Lib\site-packages\urllib3\util\retry.py", line 555, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot8968615846:AAHfTNrU3RB2xeV5tJT6lREsVZo6dgRbOAE/setMyCommands?commands=%5B%7B%22command%22%3A+%22start%22%2C+%22description%22%3A+%22%5Cu041d%5Cu0430%5Cu0447%5Cu0430%5Cu0442%5Cu044c%22%7D%2C%7B%22command%22%3A+%22profile%22%2C+%22description%22%3A+%22%5Cu041c%5Cu043e%5Cu0439+%5Cu043f%5Cu0440%5Cu043e%5Cu0444%5Cu0438%5Cu043b%5Cu044c%22%7D%2C%7B%22command%22%3A+%22my_stats%22%2C+%22description%22%3A+%22%5Cu041c%5Cu043e%5Cu044f+%5Cu0441%5Cu0442%5Cu0430%5Cu0442%5Cu0438%5Cu0441%5Cu0442%5Cu0438%5Cu043a%5Cu0430%22%7D%2C%7B%22command%22%3A+%22my_tracks%22%2C+%22description%22%3A+%22%5Cu041c%5Cu043e%5Cu0438+%5Cu0442%5Cu0440%5Cu0435%5Cu043a%5Cu0438%22%7D%2C%7B%22command%22%3A+%22achievements%22%2C+%22description%22%3A+%22%5Cu0410%5Cu0447%5Cu0438%5Cu0432%5Cu043a%5Cu0438%22%7D%2C%7B%22command%22%3A+%22referral%22%2C+%22description%22%3A+%22%5Cu0420%5Cu0435%5Cu0444%5Cu0435%5Cu0440%5Cu0430%5Cu043b%5Cu044c%5Cu043d%5Cu0430%5Cu044f+%5Cu0441%5Cu0441%5Cu044b%5Cu043b%5Cu043a%5Cu0430%22%7D%2C%7B%22command%22%3A+%22top%22%2C+%22description%22%3A+%22%5Cu0422%5Cu043e%5Cu043f+%5Cu0442%5Cu0440%5Cu0435%5Cu043a%5Cu043e%5Cu0432%22%7D%5D (Caused by ConnectTimeoutError(<HTTPSConnection(host='api.telegram.org', port=443) at 0x282c611eba0>, 'Connection to api.telegram.org timed out. (connect timeout=15)'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\SystemX\Downloads\Telegram Desktop\music_bot\music_bot\bot.py", line 1072, in main
+    bot.set_my_commands([
+    ~~~~~~~~~~~~~~~~~~~^^
+        types.BotCommand("start", "Начать"),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+        types.BotCommand("top", "Топ треков"),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ])
+    ^^
+  File "C:\Users\SystemX\Downloads\Telegram Desktop\music_bot\music_bot\venv\Lib\site-packages\telebot\__init__.py", line 3664, in set_my_commands
+    return apihelper.set_my_commands(self.token, commands, scope, language_code)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SystemX\Downloads\Telegram Desktop\music_bot\music_bot\venv\Lib\site-packages\telebot\apihelper.py", line 1264, in set_my_commands
+    return _make_request(token, method_url, params=payload, method='post')
+  File "C:\Users\SystemX\Downloads\Telegram Desktop\music_bot\music_bot\venv\Lib\site-packages\telebot\apihelper.py", line 156, in _make_request
+    result = _get_req_session().request(
+        method, request_url, params=params, files=files,
+        timeout=(connect_timeout, read_timeout), proxies=proxy)
+  File "C:\Users\SystemX\Downloads\Telegram Desktop\music_bot\music_bot\venv\Lib\site-packages\requests\sessions.py", line 651, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\SystemX\Downloads\Telegram Desktop\music_bot\music_bot\venv\Lib\site-packages\requests\sessions.py", line 784, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\SystemX\Downloads\Telegram Desktop\music_bot\music_bot\venv\Lib\site-packages\requests\adapters.py", line 717, in send
+    raise ConnectTimeout(e, request=request)
+requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot8968615846:AAHfTNrU3RB2xeV5tJT6lREsVZo6dgRbOAE/setMyCommands?commands=%5B%7B%22command%22%3A+%22start%22%2C+%22description%22%3A+%22%5Cu041d%5Cu0430%5Cu0447%5Cu0430%5Cu0442%5Cu044c%22%7D%2C%7B%22command%22%3A+%22profile%22%2C+%22description%22%3A+%22%5Cu041c%5Cu043e%5Cu0439+%5Cu043f%5Cu0440%5Cu043e%5Cu0444%5Cu0438%5Cu043b%5Cu044c%22%7D%2C%7B%22command%22%3A+%22my_stats%22%2C+%22description%22%3A+%22%5Cu041c%5Cu043e%5Cu044f+%5Cu0441%5Cu0442%5Cu0430%5Cu0442%5Cu0438%5Cu0441%5Cu0442%5Cu0438%5Cu043a%5Cu0430%22%7D%2C%7B%22command%22%3A+%22my_tracks%22%2C+%22description%22%3A+%22%5Cu041c%5Cu043e%5Cu0438+%5Cu0442%5Cu0440%5Cu0435%5Cu043a%5Cu0438%22%7D%2C%7B%22command%22%3A+%22achievements%22%2C+%22description%22%3A+%22%5Cu0410%5Cu0447%5Cu0438%5Cu0432%5Cu043a%5Cu0438%22%7D%2C%7B%22command%22%3A+%22referral%22%2C+%22description%22%3A+%22%5Cu0420%5Cu0435%5Cu0444%5Cu0435%5Cu0440%5Cu0430%5Cu043b%5Cu044c%5Cu043d%5Cu0430%5Cu044f+%5Cu0441%5Cu0441%5Cu044b%5Cu043b%5Cu043a%5Cu0430%22%7D%2C%7B%22command%22%3A+%22top%22%2C+%22description%22%3A+%22%5Cu0422%5Cu043e%5Cu043f+%5Cu0442%5Cu0440%5Cu0435%5Cu043a%5Cu043e%5Cu0432%22%7D%5D (Caused by ConnectTimeoutError(<HTTPSConnection(host='api.telegram.org', port=443) at 0x282c611eba0>, 'Connection to api.telegram.org timed out. (connect timeout=15)'))
+2026-10-14 23:34:16,198 [INFO] bot: Бот запущен
+2026-10-14 23:37:36,840 [INFO] database: БД инициализирована
+2026-10-14 23:37:51,883 [ERROR] bot: Не удалось установить список команд
+Traceback (most recent call last):
+  File "C:\Users\SystemX\Downloads\Telegram Desktop\music_bot\music_bot\venv\Lib\site-packages\urllib3\connection.py", line 239, in _new_conn
+    sock = connection.create_connection(
+        (self._dns_host, self.port),
+    ...<2 lines>...
+        socket_options=self.socket_options,
+    )
+  File "C:\Users\SystemX\Downloads\Telegram Desktop\music_bot\music_bot\venv\Lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
+    raise err
+  File "C:\Users\SystemX\Downloads\Telegram Desktop\music_bot\music_bot\venv\Lib\site-packages\urllib3\util\connection.py", line 73, in create_connection
+    sock.connect(sa)
+    ~~~~~~~~~~~~^^^^
+TimeoutError: timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\SystemX\Downloads\Telegram Desktop\music_bot\music_bot\venv\Lib\site-packages\urllib3\connectionpool.py", line 793, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "C:\Users\SystemX\Downloads\Telegram Desktop\music_bot\music_bot\venv\Lib\site-packages\urllib3\connectionpool.py", line 494, in _make_request
+    raise new_e
+  File "C:\Users\SystemX\Downloads\Telegram Desktop\music_bot\music_bot\venv\Lib\site-packages\urllib3\connectionpool.py", line 470, in _make_request
+    self._validate_conn(conn)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\SystemX\Downloads\Telegram Desktop\music_bot\music_bot\venv\Lib\site-packages\urllib3\connectionpool.py", line 1125, in _validate_conn
+    conn.connect()
+    ~~~~~~~~~~~~^^
+  File "C:\Users\SystemX\Downloads\Telegram Desktop\music_bot\music_bot\venv\Lib\site-packages\urllib3\connection.py", line 827, in connect
+    self.sock = sock = self._new_conn()
+                       ~~~~~~~~~~~~~~^^
+  File "C:\Users\SystemX\Downloads\Telegram Desktop\music_bot\music_bot\venv\Lib\site-packages\urllib3\connection.py", line 248, in _new_conn
+    raise ConnectTimeoutError(
+    ...<2 lines>...
+    ) from e
+urllib3.exceptions.ConnectTimeoutError: (<HTTPSConnection(host='api.telegram.org', port=443) at 0x1d99be5eba0>, 'Connection to api.telegram.org timed out. (connect timeout=15)')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\SystemX\Downloads\Telegram Desktop\music_bot\music_bot\venv\Lib\site-packages\requests\adapters.py", line 696, in send
+    resp = conn.urlopen(
+        method=request.method,
+    ...<9 lines>...
+        chunked=chunked,
+    )
+  File "C:\Users\SystemX\Downloads\Telegram Desktop\music_bot\music_bot\venv\Lib\site-packages\urllib3\connectionpool.py", line 847, in urlopen
+    retries = retries.increment(
+        method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+    )
+  File "C:\Users\SystemX\Downloads\Telegram Desktop\music_bot\music_bot\venv\Lib\site-packages\urllib3\util\retry.py", line 555, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot8968615846:AAHfTNrU3RB2xeV5tJT6lREsVZo6dgRbOAE/setMyCommands?commands=%5B%7B%22command%22%3A+%22start%22%2C+%22description%22%3A+%22%5Cu041d%5Cu0430%5Cu0447%5Cu0430%5Cu0442%5Cu044c%22%7D%2C%7B%22command%22%3A+%22profile%22%2C+%22description%22%3A+%22%5Cu041c%5Cu043e%5Cu0439+%5Cu043f%5Cu0440%5Cu043e%5Cu0444%5Cu0438%5Cu043b%5Cu044c%22%7D%2C%7B%22command%22%3A+%22my_stats%22%2C+%22description%22%3A+%22%5Cu041c%5Cu043e%5Cu044f+%5Cu0441%5Cu0442%5Cu0430%5Cu0442%5Cu0438%5Cu0441%5Cu0442%5Cu0438%5Cu043a%5Cu0430%22%7D%2C%7B%22command%22%3A+%22my_tracks%22%2C+%22description%22%3A+%22%5Cu041c%5Cu043e%5Cu0438+%5Cu0442%5Cu0440%5Cu0435%5Cu043a%5Cu0438%22%7D%2C%7B%22command%22%3A+%22achievements%22%2C+%22description%22%3A+%22%5Cu0410%5Cu0447%5Cu0438%5Cu0432%5Cu043a%5Cu0438%22%7D%2C%7B%22command%22%3A+%22referral%22%2C+%22description%22%3A+%22%5Cu0420%5Cu0435%5Cu0444%5Cu0435%5Cu0440%5Cu0430%5Cu043b%5Cu044c%5Cu043d%5Cu0430%5Cu044f+%5Cu0441%5Cu0441%5Cu044b%5Cu043b%5Cu043a%5Cu0430%22%7D%2C%7B%22command%22%3A+%22top%22%2C+%22description%22%3A+%22%5Cu0422%5Cu043e%5Cu043f+%5Cu0442%5Cu0440%5Cu0435%5Cu043a%5Cu043e%5Cu0432%22%7D%5D (Caused by ConnectTimeoutError(<HTTPSConnection(host='api.telegram.org', port=443) at 0x1d99be5eba0>, 'Connection to api.telegram.org timed out. (connect timeout=15)'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\SystemX\Downloads\Telegram Desktop\music_bot\music_bot\bot.py", line 1072, in main
+    bot.set_my_commands([
+    ~~~~~~~~~~~~~~~~~~~^^
+        types.BotCommand("start", "Начать"),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+        types.BotCommand("top", "Топ треков"),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ])
+    ^^
+  File "C:\Users\SystemX\Downloads\Telegram Desktop\music_bot\music_bot\venv\Lib\site-packages\telebot\__init__.py", line 3664, in set_my_commands
+    return apihelper.set_my_commands(self.token, commands, scope, language_code)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SystemX\Downloads\Telegram Desktop\music_bot\music_bot\venv\Lib\site-packages\telebot\apihelper.py", line 1264, in set_my_commands
+    return _make_request(token, method_url, params=payload, method='post')
+  File "C:\Users\SystemX\Downloads\Telegram Desktop\music_bot\music_bot\venv\Lib\site-packages\telebot\apihelper.py", line 156, in _make_request
+    result = _get_req_session().request(
+        method, request_url, params=params, files=files,
+        timeout=(connect_timeout, read_timeout), proxies=proxy)
+  File "C:\Users\SystemX\Downloads\Telegram Desktop\music_bot\music_bot\venv\Lib\site-packages\requests\sessions.py", line 651, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\SystemX\Downloads\Telegram Desktop\music_bot\music_bot\venv\Lib\site-packages\requests\sessions.py", line 784, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\SystemX\Downloads\Telegram Desktop\music_bot\music_bot\venv\Lib\site-packages\requests\adapters.py", line 717, in send
+    raise ConnectTimeout(e, request=request)
+requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot8968615846:AAHfTNrU3RB2xeV5tJT6lREsVZo6dgRbOAE/setMyCommands?commands=%5B%7B%22command%22%3A+%22start%22%2C+%22description%22%3A+%22%5Cu041d%5Cu0430%5Cu0447%5Cu0430%5Cu0442%5Cu044c%22%7D%2C%7B%22command%22%3A+%22profile%22%2C+%22description%22%3A+%22%5Cu041c%5Cu043e%5Cu0439+%5Cu043f%5Cu0440%5Cu043e%5Cu0444%5Cu0438%5Cu043b%5Cu044c%22%7D%2C%7B%22command%22%3A+%22my_stats%22%2C+%22description%22%3A+%22%5Cu041c%5Cu043e%5Cu044f+%5Cu0441%5Cu0442%5Cu0430%5Cu0442%5Cu0438%5Cu0441%5Cu0442%5Cu0438%5Cu043a%5Cu0430%22%7D%2C%7B%22command%22%3A+%22my_tracks%22%2C+%22description%22%3A+%22%5Cu041c%5Cu043e%5Cu0438+%5Cu0442%5Cu0440%5Cu0435%5Cu043a%5Cu0438%22%7D%2C%7B%22command%22%3A+%22achievements%22%2C+%22description%22%3A+%22%5Cu0410%5Cu0447%5Cu0438%5Cu0432%5Cu043a%5Cu0438%22%7D%2C%7B%22command%22%3A+%22referral%22%2C+%22description%22%3A+%22%5Cu0420%5Cu0435%5Cu0444%5Cu0435%5Cu0440%5Cu0430%5Cu043b%5Cu044c%5Cu043d%5Cu0430%5Cu044f+%5Cu0441%5Cu0441%5Cu044b%5Cu043b%5Cu043a%5Cu0430%22%7D%2C%7B%22command%22%3A+%22top%22%2C+%22description%22%3A+%22%5Cu0422%5Cu043e%5Cu043f+%5Cu0442%5Cu0440%5Cu0435%5Cu043a%5Cu043e%5Cu0432%22%7D%5D (Caused by ConnectTimeoutError(<HTTPSConnection(host='api.telegram.org', port=443) at 0x1d99be5eba0>, 'Connection to api.telegram.org timed out. (connect timeout=15)'))
+2026-10-14 23:38:06,904 [INFO] bot: Бот запущен
+2026-10-15 10:30:57,194 [INFO] database: БД инициализирована
+2026-10-15 10:31:01,075 [INFO] bot: Бот запущен
+2026-10-15 10:34:54,521 [INFO] bot: Стрим #1 начат
+2026-10-15 10:35:51,015 [INFO] bot: Профиль заполнен user_id=897870061
+2026-10-15 10:36:52,231 [INFO] bot: Принят трек #1 (file) от user_id=897870061
+2026-10-15 10:37:56,033 [INFO] bot: Трек #1 оценён: 43
+2026-10-15 11:00:37,829 [INFO] bot: Профиль заполнен user_id=8912013529
+2026-10-15 11:02:05,955 [INFO] bot: Принят трек #2 (file) от user_id=8912013529
+2026-10-15 11:02:26,589 [INFO] bot: Трек #2 оценён: 17
+2026-10-15 11:03:16,379 [INFO] bot: Принят трек #3 (file) от user_id=8912013529
+2026-10-15 11:03:21,728 [INFO] bot: Забанен user_id=8912013529 (скипнуто треков: 1)
+2026-10-15 11:04:55,620 [INFO] bot: Разбанен user_id=8912013529
+2026-10-15 11:06:13,649 [INFO] bot: Профиль заполнен user_id=8912013529
+2026-10-15 11:07:59,722 [INFO] bot: Зафиксирован топ (снимок #1)
+2026-10-15 11:07:59,732 [INFO] achievements: Ачивка top1 выдана user_id=897870061
+2026-10-15 11:08:00,064 [INFO] bot: Топ-3 опубликован в канале
+2026-10-15 12:14:43,249 [INFO] bot: Стрим завершён
+2026-10-20 15:22:53,815 [INFO] database: БД инициализирована
+2026-10-20 15:22:54,231 [INFO] bot: Бот запущен
+2026-10-20 15:23:09,387 [INFO] bot: Стрим #2 начат
+2026-10-20 15:26:01,281 [INFO] bot: Профиль заполнен user_id=5735205907
+2026-10-20 15:26:23,556 [INFO] bot: Принят трек #4 (link) от user_id=5735205907
+2026-10-20 15:27:18,273 [INFO] bot: Принят трек #5 (file) от user_id=5735205907
+2026-10-20 15:30:28,949 [INFO] bot: Профиль заполнен user_id=7767101520
+2026-10-20 15:30:55,675 [INFO] bot: Принят трек #6 (file) от user_id=7767101520
+2026-10-20 15:32:21,703 [INFO] bot: Трек #4 оценён: 38
+2026-10-20 15:35:29,024 [INFO] bot: Трек #5 оценён: 43
+2026-10-20 15:37:28,747 [INFO] bot: Профиль заполнен user_id=6361212245
+2026-10-20 15:38:07,709 [INFO] bot: Принят трек #7 (file) от user_id=6361212245
+2026-10-20 15:38:33,414 [INFO] bot: Профиль заполнен user_id=984397395
+2026-10-20 15:38:41,101 [INFO] bot: Принят трек #8 (file) от user_id=6361212245
+2026-10-20 15:38:56,699 [INFO] bot: Принят трек #9 (file) от user_id=984397395
+2026-10-20 15:39:12,012 [INFO] bot: Трек #6 оценён: 37
+2026-10-20 15:43:32,252 [INFO] bot: Трек #7 оценён: 42
+2026-10-20 15:47:26,594 [INFO] bot: Профиль заполнен user_id=829080132
+2026-10-20 15:47:57,181 [INFO] bot: Трек #8 оценён: 36
+2026-10-20 15:48:25,655 [INFO] bot: Принят трек #10 (file) от user_id=829080132
+2026-10-20 15:49:38,039 [INFO] bot: Трек #9 оценён: 39
+2026-10-20 15:52:10,396 [INFO] bot: Профиль заполнен user_id=438740095
+2026-10-20 15:54:16,651 [INFO] bot: Трек #10 оценён: 33
+2026-10-20 15:56:32,645 [INFO] bot: Принят трек #11 (file) от user_id=829080132
+2026-10-20 15:56:37,447 [INFO] bot: Принят трек #12 (file) от user_id=438740095
+2026-10-20 15:57:16,950 [INFO] bot: Профиль заполнен user_id=5034306106
+2026-10-20 15:58:21,833 [INFO] bot: Принят трек #13 (file) от user_id=5034306106
+2026-10-20 15:59:55,859 [INFO] bot: Трек #12 оценён: 36
+2026-10-20 16:00:54,594 [INFO] bot: Профиль заполнен user_id=6099666752
+2026-10-20 16:03:20,736 [INFO] bot: Принят трек #14 (file) от user_id=6099666752
+2026-10-20 16:03:50,332 [INFO] bot: Трек #11 оценён: 39
+2026-10-20 16:04:48,057 [INFO] bot: Принят трек #15 (file) от user_id=438740095
+2026-10-20 16:05:09,041 [INFO] bot: Профиль заполнен user_id=1138309296
+2026-10-20 16:05:34,117 [INFO] bot: Профиль заполнен user_id=1138309296
+2026-10-20 16:05:45,430 [INFO] bot: Принят трек #16 (link) от user_id=1138309296
+2026-10-20 16:07:13,024 [INFO] bot: Трек #13 оценён: 22
+2026-10-20 16:10:11,978 [INFO] bot: Профиль заполнен user_id=7960613400
+2026-10-20 16:10:22,904 [INFO] bot: Трек #14 оценён: 35
+2026-10-20 16:10:29,004 [INFO] bot: Профиль заполнен user_id=7960613400
+2026-10-20 16:10:49,328 [INFO] bot: Принят трек #17 (file) от user_id=7960613400
+2026-10-20 16:16:00,810 [INFO] bot: Трек #15 оценён: 39
+2026-10-20 16:21:00,134 [INFO] bot: Трек #16 оценён: 41
+2026-10-20 16:24:31,682 [INFO] bot: Профиль заполнен user_id=5974829558
+2026-10-20 16:25:10,901 [INFO] bot: Принят трек #18 (file) от user_id=5974829558
+2026-10-20 16:25:48,634 [INFO] bot: Трек #17 оценён: 37
+2026-10-20 16:27:02,459 [INFO] bot: Профиль заполнен user_id=903189487
+2026-10-20 16:27:17,700 [INFO] bot: Принят трек #19 (link) от user_id=903189487
+2026-10-20 16:31:35,686 [INFO] bot: Профиль заполнен user_id=5750364236
+2026-10-20 16:31:57,530 [INFO] bot: Принят трек #20 (file) от user_id=5750364236
+2026-10-20 16:32:32,347 [INFO] bot: Трек #18 оценён: 41
+2026-10-20 16:32:55,155 [INFO] bot: Принят трек #21 (file) от user_id=5974829558
+2026-10-20 16:36:39,489 [INFO] bot: Трек #19 оценён: 48
+2026-10-20 16:36:39,693 [INFO] achievements: Ачивка score_45 выдана user_id=903189487
+2026-10-20 16:37:34,686 [INFO] bot: Профиль заполнен user_id=1898539228
+2026-10-20 16:38:14,420 [INFO] bot: Принят трек #22 (file) от user_id=1898539228
+2026-10-20 16:40:06,315 [INFO] bot: Трек #20 оценён: 38
+2026-10-20 16:44:57,566 [INFO] bot: Профиль заполнен user_id=8446857862
+2026-10-20 16:45:04,551 [INFO] bot: Принят трек #23 (link) от user_id=8446857862
+2026-10-20 16:45:31,099 [INFO] bot: Профиль заполнен user_id=1744095437
+2026-10-20 16:45:44,253 [INFO] bot: Трек #21 оценён: 41
+2026-10-20 16:45:56,124 [INFO] bot: Принят трек #24 (file) от user_id=1744095437
+2026-10-20 16:49:39,627 [INFO] bot: Трек #22 оценён: 40
+2026-10-20 16:50:40,397 [INFO] bot: Профиль заполнен user_id=1898539228
+2026-10-20 16:51:27,676 [INFO] bot: Принят трек #25 (file) от user_id=1898539228
+2026-10-20 16:52:47,555 [INFO] bot: Трек #23 оценён: 43
+2026-10-20 16:52:57,140 [INFO] bot: Принят трек #26 (link) от user_id=8912013529
+2026-10-20 16:55:21,493 [INFO] bot: Трек #24 оценён: 36
+2026-10-20 16:58:58,991 [INFO] bot: Трек #25 оценён: 42
+2026-10-20 17:01:44,919 [INFO] bot: Трек #26 оценён: 45
+2026-10-20 17:01:45,097 [INFO] achievements: Ачивка score_45 выдана user_id=8912013529
+2026-10-20 17:03:07,026 [INFO] bot: Зафиксирован топ (снимок #2)
+2026-10-20 17:03:07,038 [INFO] achievements: Ачивка top1 выдана user_id=903189487
+2026-10-20 17:03:07,666 [INFO] bot: Топ-3 опубликован в канале
+2026-10-20 17:04:08,460 [INFO] bot: Стрим завершён
